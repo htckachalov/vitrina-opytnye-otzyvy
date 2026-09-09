@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Отзывы опытных специалистов · Школа Александры Самородовой</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--paper:#faf8f5;--white:#fff;--red:#d92332;--red-d:#a8121f;--line:#e6e1d9;--mut:#7a736a}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:Manrope,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+.rule{height:1px;background:var(--line);margin:0}
+/* HERO */
+.top{padding:clamp(46px,7vw,86px) 0 clamp(30px,4vw,52px)}
+.kicker{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:26px}
+.kicker::after{content:'';flex:1;height:1px;background:var(--red);opacity:.28}
+.top h1{font-family:Unbounded,sans-serif;font-size:clamp(26px,4.6vw,46px);font-weight:700;line-height:1.2;letter-spacing:-.5px;max-width:880px}
+.top h1 em{font-style:normal;color:var(--red)}
+.lead{margin-top:24px;font-size:clamp(16px,2.1vw,19px);line-height:1.65;color:#3b3b3b;max-width:720px}
+.lead b{font-weight:800;color:var(--ink)}
+.meta{display:flex;gap:38px;flex-wrap:wrap;margin-top:36px;padding-top:26px;border-top:1px solid var(--line)}
+.mv{font-family:Unbounded,sans-serif;font-size:clamp(21px,3vw,30px);font-weight:700;color:var(--red);line-height:1}
+.ml{font-size:12px;color:var(--mut);margin-top:7px;letter-spacing:.4px}
+/* STOP BLOCK */
+.sec{padding:clamp(44px,6vw,74px) 0}
+.sec.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.h2{font-family:Unbounded,sans-serif;font-size:clamp(19px,3vw,30px);font-weight:600;line-height:1.28;margin-bottom:12px}
+.sub{color:var(--mut);font-size:15.5px;line-height:1.6;max-width:640px;margin-bottom:30px}
+.stops{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.stop{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:0 12px 12px 0;padding:20px 20px;cursor:pointer;transition:.22s;text-align:left;font-family:Manrope}
+.stop:hover{border-left-color:var(--red);transform:translateX(3px)}
+.stop.on{border-left-color:var(--red);background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.07)}
+.stop-q{font-size:15.5px;font-weight:700;line-height:1.45}
+.stop-n{font-size:11px;color:var(--mut);margin-top:9px;letter-spacing:.4px}
+.feed{margin-top:30px}
+.fhead{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--red)}
+.fhead b{font-family:Unbounded,sans-serif;font-size:16px;font-weight:600}
+.fhead span{font-size:13px;color:var(--mut)}
+.grid{columns:3;column-gap:14px}
+@media(max-width:900px){.grid{columns:2}}
+@media(max-width:600px){.grid{columns:1}}
+.card{break-inside:avoid;margin-bottom:14px;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in;transition:.22s}
+.card:hover{box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:#d8d0c4}
+.card img{width:100%;display:block}
+.tagline{padding:9px 13px;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--red);font-weight:800;border-top:1px solid var(--line)}
+.more{display:block;margin:28px auto 0;padding:15px 38px;background:var(--ink);color:#fff;border:none;border-radius:99px;font-family:Unbounded,sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:.22s}
+.more:hover{background:var(--red)}
+/* ROLES */
+.roles{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.role{padding:12px 24px;border:1.5px solid var(--line);background:var(--white);border-radius:99px;font-family:Manrope;font-size:14px;font-weight:700;cursor:pointer;transition:.22s}
+.role:hover{border-color:var(--red)}
+.role.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prob{border-top:1px solid var(--line)}
+.pitem{border-bottom:1px solid var(--line)}
+.phead{width:100%;background:none;border:none;text-align:left;padding:20px 44px 20px 0;font-family:Manrope;font-size:16.5px;font-weight:700;line-height:1.45;cursor:pointer;position:relative;color:var(--ink)}
+.phead:hover{color:var(--red)}
+.pnum{font-family:Unbounded,sans-serif;font-size:12px;color:var(--red);margin-right:12px;font-weight:700}
+.phead::after{content:'+';position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--red);font-weight:300}
+.pitem.open .phead::after{content:'−'}
+.pbody{display:none;padding:0 0 26px}
+.pitem.open .pbody{display:block}
+.plabel{font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);font-weight:800;margin:18px 0 8px}
+.ptext{font-size:15.5px;line-height:1.68;color:#3b3b3b;max-width:760px}
+.plist{list-style:none;margin-top:6px}
+.plist li{font-size:15px;line-height:1.6;color:#3b3b3b;padding-left:20px;position:relative;margin-bottom:8px}
+.plist li::before{content:'';position:absolute;left:2px;top:9px;width:6px;height:6px;background:var(--red);border-radius:50%}
+.pchange{margin-top:18px;padding:16px 20px;background:var(--paper);border-left:3px solid var(--red);font-size:15.5px;line-height:1.6}
+.pchange b{font-weight:800}
+/* GET */
+.gets{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px}
+.get{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px}
+.get h4{font-family:Unbounded,sans-serif;font-size:15px;font-weight:600;margin-bottom:14px;line-height:1.4}
+.price{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.price:last-child{border:none}
+.price b{color:var(--red);white-space:nowrap;font-weight:800}
+.note{font-size:13px;color:var(--mut);margin-top:14px;line-height:1.55}
+/* CTA */
+.cta{background:var(--ink);color:#fff;padding:clamp(50px,7vw,84px) 0}
+.cta h2{font-family:Unbounded,sans-serif;font-size:clamp(22px,3.6vw,36px);font-weight:700;line-height:1.25;margin-bottom:18px}
+.cta h2 em{font-style:normal;color:#ff5a67}
+.cta p{color:rgba(255,255,255,.62);font-size:16px;line-height:1.65;max-width:640px;margin-bottom:32px}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:36px}
+.perk{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px}
+.pt{font-family:Unbounded,sans-serif;font-size:14px;font-weight:600;margin-bottom:9px;line-height:1.4}
+.pd{font-size:14px;line-height:1.6;color:rgba(255,255,255,.6)}
+.cbtn{display:inline-block;padding:18px 46px;background:var(--red);color:#fff;text-decoration:none;font-family:Unbounded,sans-serif;font-size:15px;font-weight:600;border-radius:99px;transition:.25s}
+.cbtn:hover{background:#ff5a67;transform:translateY(-2px)}
+.mod{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;align-items:center;justify-content:center;padding:18px;cursor:zoom-out}
+.mod.on{display:flex}
+.mod img{max-width:94vw;max-height:92vh;border-radius:8px}
+</style></head><body>
+<section class="top"><div class="wrap">
+ <div class="kicker">Александра Самородова · 18 поток</div>
+ <h1>Я собрала для вас отзывы тех,<br>кто пришёл ко мне <em>не с нуля</em></h1>
+ <p class="lead">У них уже был опыт, свои клиенты и другие обучения за спиной. <b>Им есть с чем сравнивать</b> - и именно поэтому их слова стоит читать внимательнее, чем восторги новичков.</p>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+ <h2 class="h2">Выбери, что тебя останавливает</h2>
+ <p class="sub">Так же думали люди, которые уже работали в нише. Нажми - и увидишь, чем это для них закончилось.</p>
+ <div class="stops" id="stops"></div>
+ <div class="feed" id="feed"></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <h2 class="h2">Что даёт обучение тому, кто уже в профессии</h2>
+ <p class="sub">Это не про программу. Это про конкретные проблемы в вашей работе и про то, чем именно каждая закрывается. Ни одна из них не про то, что вы плохо работаете - все они про то, что рынок за два года изменил требования, а набор компетенций у большинства остался прежним.</p>
+ <div class="roles" id="roles"></div>
+ <div class="prob" id="probs"></div>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+ <h2 class="h2">Что вы получаете независимо от роли</h2>
+ <div class="gets">
+  <div class="get"><h4>Профессия целиком, а не набор инструментов</h4>
+   <ul class="plist">
+    <li>Четыре месяца, тридцать три модуля: маркетинг и реклама вместе, онлайн и офлайн</li>
+    <li>Анализ рынка и аудитории до сегментов, конкуренты, позиционирование, ценообразование</li>
+    <li>Закупка в семи соцсетях, проверка блогеров на накрутку вручную, тест рекламы, договоры и риски</li>
+    <li>Контент, контент-завод, UGC-креаторы, амбассадоры, воронки, контекст и таргет ВК</li>
+    <li>Офлайн: ТВ, радио, СМИ, наружка, PR, продвижение по городам и регионам</li>
+    <li>Аналитика: карта метрик, юнит-экономика, прогноз, окупаемость, отчётность</li>
+    <li>Поиск клиентов, подача себя, доведение разговора до оплаты, делегирование и агентство</li>
+   </ul></div>
+  <div class="get"><h4>Формат, в котором невозможно застрять</h4>
+   <ul class="plist">
+    <li>Ведёт лично Александра: сама пишет программу и сама проверяет каждое домашнее задание</li>
+    <li>Домашние задания - симулятор реальной работы, а не тесты</li>
+    <li>Рабочая тетрадь: вы ведёте клиента от начала до конца и получаете готовый маршрут</li>
+    <li>Групповые созвоны с записями и индивидуальные - без ограничения по времени</li>
+    <li>Чат работает круглосуточно, Александра отвечает лично каждый день</li>
+    <li>Группа 50 человек - осознанный предел, чтобы каждому хватало внимания</li>
+    <li>Все расчёты в готовых таблицах: подставляете свои цифры и читаете результат</li>
+   </ul></div>
+  <div class="get"><h4>Документ и доступ к заказам</h4>
+   <p class="ptext">Школа первой в нише получила государственную лицензию. По итогу выдаётся диплом о профессиональной переподготовке: он вносится в реестр ФИС ФРДО и отображается на Госуслугах. Это документ, а не сертификат об участии.</p>
+   <p class="ptext" style="margin-top:12px">Плюс чат вакансий школы, куда приходят реальные заказы - продвижение, закупка, написание материалов, UGC, маркировка, - и комьюнити выпускников, которое остаётся с вами после обучения.</p></div>
+ </div>
+ <h2 class="h2" style="margin-top:46px">Сколько стоят услуги, которые вы сможете оказывать</h2>
+ <p class="sub">Это цены рынка, а не обещание дохода. Сколько вы заработаете, зависит от того, сколько клиентов возьмёте и какие услуги сможете закрыть.</p>
+ <div class="gets"><div class="get">
+  <div class="price"><span>Комплексная работа с одним клиентом</span><b>от 200 000 ₽</b></div>
+  <div class="price"><span>Закупка рекламы - 20-30% от бюджета. При бюджете 500 000</span><b>100-120 000 ₽</b></div>
+  <div class="price"><span>Контент-завод и работа с UGC</span><b>100-300 000 ₽</b></div>
+  <div class="price"><span>Разработка воронок продаж</span><b>50-250 000 ₽</b></div>
+  <div class="price"><span>Маркетинговая стратегия</span><b>50-200 000 ₽</b></div>
+ </div><div class="get">
+  <div class="price"><span>Контент клиенту на месяц</span><b>50-150 000 ₽</b></div>
+  <div class="price"><span>PR, инфоповоды и офлайн-реклама</span><b>от 50 000 ₽</b></div>
+  <div class="price"><span>Продвижение по городам и регионам</span><b>от 50 000 ₽</b></div>
+  <div class="price"><span>Контекстная реклама и таргет ВКонтакте</span><b>от 30 000 ₽</b></div>
+  <div class="price"><span>Написание рекламных материалов, за подачу</span><b>5-15 000 ₽</b></div>
+ </div></div>
+ <p class="note">Разница между чеком в тридцать тысяч и в двести - не в количестве клиентов. Она в количестве задач, которые вы способны закрыть у одного и того же клиента.</p>
+</div></section>
+
+<section class="cta"><div class="wrap">
+ <h2>Рынок перестал платить за услугу.<br>Он платит <em>за результат</em>.</h2>
+ <p>Специалист, который умеет одно звено из пяти, физически не может этот результат обеспечить - и теряет клиентов, чек и доступ к вакансиям. Обучение закрывает не одну проблему из списка, а всю цепочку целиком. Именно поэтому это четыре месяца и маркетинг вместе с рекламой, а не месячный курс по одному инструменту.</p>
+ <div class="perks">
+  <div class="perk"><div class="pt">Диплом входит в стоимость</div><div class="pd">Профессиональная переподготовка, реестр ФИС ФРДО, отображается на Госуслугах. Только на 18 потоке - в 19-м так уже не будет.</div></div>
+  <div class="perk"><div class="pt">Два обучения по цене одного</div><div class="pd">18 поток - предпоследний, 19-й будет последним. Тем, кто заходит на 18-й, откроется и 19-й: первый заход собрать систему, второй - пройти её со своими проектами.</div></div>
+  <div class="perk"><div class="pt">Доступ к материалам фактически два года</div><div class="pd">Год по программе плюс открытый 19 поток сверху.</div></div>
+  <div class="perk"><div class="pt">Цена растёт каждую неделю</div><div class="pd">Стоимость повышается до старта 5 октября. Позже войти по этой цене будет нельзя.</div></div>
+ </div>
+ <a class="cbtn" href="https://t.me/alina_sevalkina" target="_blank">Узнать про обучение →</a>
+</div></section>
+
+<div class="mod" id="mod" onclick="this.classList.remove('on')"><img id="modi" src="" alt=""></div>
+<script src="data.js"></script><script src="app.js"></script></body></html>
